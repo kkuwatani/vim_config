@@ -4,3 +4,12 @@
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "bundle/budnle/nerdcommenter"]
+	path = bundle/budnle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "/Users/kkuwatani/.vim/bundle/nerdtree"]
+	path = /Users/kkuwatani/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git

@@ -9,16 +9,6 @@ set laststatus=2
 "git gutter configs
 set signcolumn=yes
 
-"nerd commenter configs
-let g:NERDSpaceDelims = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-
-"nerd tree configs
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " syntax and style configs
 filetype on
 colorscheme Tomorrow-Night
