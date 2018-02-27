@@ -1,15 +1,16 @@
 "add plugins managed by pathogen in the /.vim/bundle folder
 execute pathogen#infect()
-filetype plugin indent on
-syntax on
 
 " syntax and style configs
+filetype plugin indent on
+syntax enable
 filetype on
-colorscheme Tomorrow-Night
+let python_highlight_all=1
+colorscheme molokai
 
 "functional aesthetic configs
 set number
-set colorcolumn=80
+set colorcolumn=120
 set hlsearch
 set showmatch
 
@@ -33,6 +34,7 @@ let mapleader=" "
 nnoremap <silent> \ :silent nohlsearch<CR>
 " remap - to jump to end of line
 nnoremap - $
+vnoremap - $
 " remap moving between split windows
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -42,7 +44,8 @@ noremap <C-l> <C-w>l
 nnoremap S i<cr><esc><right>
 " buffer navigation
 nnoremap <C-n> :bn<CR>
-nnoremap <C-p> :bp<CR>
+nnoremap <C-b> :bp<CR>
+" need a shortcut for closing buffer
 " buffer splits
 noremap <leader>s :vsplit<cr>
 noremap <leader>i :split<cr>
@@ -59,8 +62,6 @@ let g:NERDTrimTrailingWhitespace = 1
 "nerd tree configs
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"Command-T configs
-"noremap <silent> <leader>tt :CommandT<CR>
-"noremap <silent> <leader>bt :CommandTBuffer<CR>
-"noremap <silent> <leader>tf :CommandTFlush<CR>
+"ctrlp configs
+let g:ctrlp_working_path_mode = 0
 
