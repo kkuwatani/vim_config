@@ -16,3 +16,6 @@
 [submodule "bundle/ctrlsf"]
 	path = bundle/ctrlsf
 	url = https://github.com/dyng/ctrlsf.vim
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe

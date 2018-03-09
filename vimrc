@@ -33,6 +33,9 @@ set clipboard=unnamed
 "mouse config (use options + click to use mouse)
 set mouse=a
 
+"make backspace work in INSERT
+set backspace=2
+
 "--- KEY REMAPS ---"
 " remap leader key to space
 let mapleader=" "
@@ -67,16 +70,19 @@ vnoremap > >gv
 "light line configs
 set laststatus=2
 set ttimeout ttimeoutlen=30
+
 "nerd commenter configs
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+
 "nerd tree configs
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 "ctrlp configs
 let g:ctrlp_working_path_mode = 0
+
 "ctrsf configs
 "default to compact mode (M to switch to normal mode)
 let g:ctrlsf_default_view_mode = 'compact'
@@ -88,6 +94,9 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-" TBD plug ins 
-" pylint
-" jedi
+
+"youcompleteme configs
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
+"allows youcompleteme python venv detection (hacky)
+let g:ycm_python_binary_path='/Users/kkuwatani/Envs/ground_control_venv/bin/python'
