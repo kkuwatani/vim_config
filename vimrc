@@ -52,8 +52,8 @@ noremap <C-l> <C-w>l
 " split line (S is redundant with cc)
 nnoremap S i<cr><esc><right>
 " buffer navigation
-nnoremap <C-n> :bn<CR>
-nnoremap <C-b> :bp<CR>
+nnoremap <C-m> :bn<CR>
+nnoremap <C-n> :bp<CR>
 noremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR> 
 " need a shortcut for closing buffer
 " buffer splits
