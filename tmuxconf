@@ -19,6 +19,3 @@ setw -g mouse on
 
 # move window to top 
 bind-key T swap-window -t 0
-
-# changes C-d from exit to detach
-bind-key -n C-d detach
