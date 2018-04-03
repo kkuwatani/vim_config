@@ -65,6 +65,8 @@ noremap <C-y> 10<C-y>
 " indentation visual block stays
 vnoremap < <gv
 vnoremap > >gv
+" search highlighted text
+vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>
 
 "--- PLUG INS ---"
 "light line configs
