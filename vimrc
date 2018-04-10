@@ -66,8 +66,7 @@ noremap <C-y> 10<C-y>
 vnoremap < <gv
 vnoremap > >gv
 " search highlighted text
-vnoremap <expr> // 'y/\V'.escape(@",'\').'<CR>
-
+vnoremap // y/\V<C-R>"<CR>
 "--- PLUG INS ---"
 "light line configs
 set laststatus=2
