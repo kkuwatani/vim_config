@@ -32,6 +32,7 @@ set clipboard=unnamed
 
 "mouse config (use options + click to use mouse)
 set mouse=a
+set ttymouse=xterm2
 
 "make backspace work in INSERT
 set backspace=2

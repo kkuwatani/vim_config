@@ -1,0 +1,21 @@
+# for vim colorschemes in tmux
+set -g default-terminal "screen-256color"
+
+##  vim like controls ##
+# switching panes
+bind h select-pane -L
+bind j select-pane -D 
+bind k select-pane -U
+bind l select-pane -R
+# switch windows
+bind n select-window -t :-
+bind m select-window -t :+
+# splitting
+bind-key v split-window -h
+bind-key s split-window -v
+
+# enable mouse
+setw -g mouse on
+
+# move window to top 
+bind-key T swap-window -t 0
