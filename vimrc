@@ -68,6 +68,16 @@ vnoremap < <gv
 vnoremap > >gv
 " search highlighted text
 vnoremap // y/\V<C-R>"<CR>
+" toggle relative line number
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <leader>nt :call NumberToggle()<cr>
+
 "--- PLUG INS ---"
 "light line configs
 set laststatus=2
