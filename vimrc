@@ -7,6 +7,7 @@ filetype on
 syntax on
 let python_highlight_all=1
 colorscheme molokai
+hi Visual term=reverse cterm=reverse guibg=Grey
 
 "functional aesthetic configs
 set number
