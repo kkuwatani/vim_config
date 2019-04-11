@@ -95,6 +95,7 @@ autocmd StdinReadPre * let s:std_in=1
 
 "ctrlp configs
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_arg_map = 1
 
 "ctrsf configs
 "default to compact mode (M to switch to normal mode)
