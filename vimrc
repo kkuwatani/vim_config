@@ -113,4 +113,5 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
 "allows youcompleteme python venv detection (hacky)
-let g:ycm_python_binary_path='/Users/kkuwatani/Envs/ground_control_venv/bin/python'
+let g:ycm_python_binary_path='/usr/bin/python'
+let g:ycm_server_python_interpreter='/usr/bin/python'
