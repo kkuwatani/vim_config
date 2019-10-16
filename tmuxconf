@@ -1,6 +1,9 @@
 # for vim colorschemes in tmux
 set -g default-terminal "screen-256color"
 
+# increase scrollback buffer
+set-option -g history-limit 7500
+
 ##  vim like controls ##
 # switching panes
 bind h select-pane -L
