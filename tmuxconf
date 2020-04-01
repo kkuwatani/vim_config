@@ -17,8 +17,16 @@ bind m select-window -t :+
 bind-key v split-window -h
 bind-key s split-window -v
 
-# enable mouse
-setw -g mouse on
-
 # move window to top 
 bind-key T swap-window -t 0
+
+# nav like vim
+setw -g mode-keys vi
+
+# mouse on
+set -g mouse on
+
+# vim copy paste to system clipboard
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi r send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
