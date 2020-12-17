@@ -6,6 +6,9 @@ filetype plugin indent on
 filetype on
 syntax on
 let python_highlight_all=1
+let g:go_highlight_fields=1
+let g:go_highlight_functions=1
+let g:go_highlight_function_calls=1
 colorscheme molokai
 hi Visual term=reverse cterm=reverse guibg=Grey
 set omnifunc=syntaxcomplete#Complete
