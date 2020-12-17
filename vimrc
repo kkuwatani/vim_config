@@ -79,6 +79,8 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <leader>nt :call NumberToggle()<cr>
+" paste without overwrite
+xnoremap P pgvy
 
 "--- PLUG INS ---"
 "light line configs
