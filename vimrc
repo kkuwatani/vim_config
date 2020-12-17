@@ -1,4 +1,5 @@
 "add plugins managed by pathogen in the /.vim/bundle folder
+let g:pathogen_disabled = ['YouCompleteMe']
 execute pathogen#infect()
 
 " syntax and style configs
@@ -113,5 +114,8 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gc :YcmCompleter GoToDeclaration<CR>
 "allows youcompleteme python venv detection (hacky)
-let g:ycm_python_binary_path='/usr/bin/python'
-let g:ycm_server_python_interpreter='/usr/bin/python'
+let g:ycm_python_binary_path='/usr/local/opt/python/libexec/bin/python'
+let g:ycm_server_python_interpreter='/usr/local/opt/python/libexec/bin/python'
+
+"VimGo configuration
+let g:go_metalinter_autosave = 1
