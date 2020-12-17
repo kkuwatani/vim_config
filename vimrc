@@ -1,5 +1,4 @@
 "add plugins managed by pathogen in the /.vim/bundle folder
-let g:pathogen_disabled = ['YouCompleteMe']
 execute pathogen#infect()
 
 " syntax and style configs
@@ -9,6 +8,7 @@ syntax on
 let python_highlight_all=1
 colorscheme molokai
 hi Visual term=reverse cterm=reverse guibg=Grey
+set omnifunc=syntaxcomplete#Complete
 
 "functional aesthetic configs
 set number
@@ -109,6 +109,8 @@ nmap     <C-F>p <Plug>CtrlSFPwordPath
 nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+" ctags configs
 
 "youcompleteme configs
 nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
