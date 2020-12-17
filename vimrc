@@ -23,10 +23,10 @@ set history=100
 "formatting
 filetype indent on
 set nowrap
-set tabstop=4 
+set tabstop=8
 set autoindent
-set expandtab "tabs are actually actually spaces 
-set shiftwidth=4 "specifically tabs = 4 spaces 
+" set expandtab "tabs are actually actually spaces
+" set shiftwidth=4 "specifically tabs = 4 spaces
 set smartindent "intelligent auto tabbing
 
 "copy paste config
