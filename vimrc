@@ -20,7 +20,7 @@ set showmatch
 set hidden
 set history=100
 
-"indentation and tab config - look this up more
+"formatting
 filetype indent on
 set nowrap
 set tabstop=4 
@@ -81,6 +81,8 @@ endfunc
 nnoremap <leader>nt :call NumberToggle()<cr>
 " paste without overwrite
 xnoremap P pgvy
+" run clang format
+noremap <leader>k :py3f ~/.vim/bundle/clang-format.py<cr>
 
 "--- PLUG INS ---"
 "light line configs
