@@ -23,3 +23,8 @@ To set up this repo, the following steps must be taken:
  ```
     ln -s ~/.dev_env/bash/bashprofile ~/.bash_profile
  ```
+
+ - create symlink for gdbinit
+ ```
+    ln -s ~/.dev_env/gdbinit ~/.gdbinit
+ ```
