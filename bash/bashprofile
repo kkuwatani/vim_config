@@ -18,3 +18,9 @@ export PS1="\u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 # git tab completion
 source ~/.vim/bash/git/contrib/completion/git-completion.bash
 if [ -f /Users/kylekuwatani/.bashrc ]; then source /Users/kylekuwatani/.bashrc; fi
+
+# aliases
+alias gl="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
+alias gr='git rebase -i origin'
+alias gs='git status'
+alias gca='git commit --amend --no-edit'
