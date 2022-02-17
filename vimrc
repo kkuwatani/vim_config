@@ -12,7 +12,7 @@ set omnifunc=syntaxcomplete#Complete
 
 "functional aesthetic configs
 set number
-set colorcolumn=120
+set colorcolumn=79
 set hlsearch
 set showmatch
 
@@ -82,7 +82,7 @@ nnoremap <leader>nt :call NumberToggle()<cr>
 " paste without overwrite
 xnoremap P pgvy
 " run clang format
-noremap <leader>k :py3f ~/.vim/bundle/clang-format.py<cr>
+noremap <leader>k :pyf ~/.vim/bundle/clang-format.py<cr>
 
 "--- PLUG INS ---"
 "light line configs

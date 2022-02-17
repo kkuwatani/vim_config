@@ -39,3 +39,9 @@ To set up this repo, the following steps must be taken:
  ```
     brew install reattach-to-user-namespace
  ```
+
+ - Install and link macvim for clang-formatter to work:
+ ```
+    brew install macvim
+    brew link macvim
+ ```
