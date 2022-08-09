@@ -9,18 +9,22 @@ export PATH="/usr/local/gcc-arm-none-eabi/bin:$PATH"
 # gdb text editor
 export EDITOR=/usr/local/bin/vim
 
+# aliases
+alias gs='git status'
+alias ga='git add'
+alias gd='git diff'
+alias gri='git rebase -i origin'
+alias gca='git commit --amend --no-edit'
+alias gl="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
+
+#### BASH SPECIFIC ####
+# bash git tab completion
+source ~/.dev_env/bash/git/contrib/completion/git-completion.bash
+if [ -f /Users/kylekuwatani/.bashrc ]; then source /Users/kylekuwatani/.bashrc; fi
+
 # bash prompt customization
 parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="\u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-
-# git tab completion
-source ~/.dev_env/bash/git/contrib/completion/git-completion.bash
-if [ -f /Users/kylekuwatani/.bashrc ]; then source /Users/kylekuwatani/.bashrc; fi
-
-# aliases
-alias gl="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
-alias gr='git rebase -i origin'
-alias gs='git status'
-alias gca='git commit --amend --no-edit'
+#####################

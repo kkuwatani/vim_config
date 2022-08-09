@@ -25,9 +25,13 @@ To set up this repo, the following steps must be taken:
     ln -s ~/.dev_env/tmuxconf ~/.tmux.conf
  ```
 
- - create symlink for bash profile
+ - create symlink for shell profile for bash
  ```
-    ln -s ~/.dev_env/bash/bashprofile ~/.bash_profile
+    ln -s ~/.dev_env/shell/bashprofile ~/.bash_profile
+ ```
+ - OR for zsh
+ ```
+    ln -s ~/.dev_env/shell/zshrc ~/.zshrc
  ```
 
  - create symlink for gdbinit

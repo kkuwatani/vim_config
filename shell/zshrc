@@ -1,0 +1,50 @@
+# for homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# for python virtualenvwrapper
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+
+# arm gcc to path for convenience
+export PATH="/usr/local/gcc-arm-none-eabi/bin:$PATH"
+
+# gdb text editor
+export EDITOR=/usr/bin/vim
+
+# aliases
+alias gs='git status'
+alias ga='git add'
+alias gd='git diff'
+alias gri='git rebase -i origin'
+alias gca='git commit --amend --no-edit'
+alias gl="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
+
+#### ZSH SPECIFIC ####
+# zsh git tab completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  autoload -Uz compinit
+  compinit
+fi
+
+# zsh prompt customization
+# enable substitution in the prompt.
+setopt prompt_subst
+# function to find and set branch name var if in git repository.
+function git_branch_name()
+{
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+  if [[ $branch == "" ]];
+  then
+    :
+  else
+    echo '('$branch')'
+  fi
+}
+# prompt format and color
+prompt='%n %F{002}%K{234}%~ %F{003}%K{234}$(git_branch_name) %F{015}%K{234}$ '
+
+# fixed a tmux zsh issue that causes zsh shortcuts to break
+bindkey -e
+#####################
