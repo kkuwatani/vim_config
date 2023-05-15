@@ -4,7 +4,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # for python virtualenvwrapper
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export WORKON_HOME=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+source /opt/homebrew/bin/virtualenvwrapper.sh
 
 # arm gcc to path for convenience
 export PATH="/usr/local/gcc-arm-none-eabi/bin:$PATH"

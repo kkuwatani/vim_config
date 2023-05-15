@@ -12,7 +12,7 @@ set omnifunc=syntaxcomplete#Complete
 
 "functional aesthetic configs
 set number
-set colorcolumn=79
+set colorcolumn=80
 set hlsearch
 set showmatch
 
@@ -23,10 +23,10 @@ set history=100
 "formatting
 filetype indent on
 set nowrap
-set tabstop=4 
+set tabstop=4
 set autoindent
 set expandtab "tabs are actually actually spaces 
-set shiftwidth=4 "specifically tabs = 4 spaces 
+set shiftwidth=4 "specifically tabs = 4 spaces
 set smartindent "intelligent auto tabbing
 
 "copy paste config
@@ -82,7 +82,7 @@ nnoremap <leader>nt :call NumberToggle()<cr>
 " paste without overwrite
 xnoremap P pgvy
 " run clang format
-noremap <leader>k :pyf ~/.vim/bundle/clang-format.py<cr>
+noremap <leader>k :py3f ~/.vim/bundle/clang-format.py<cr>
 
 "--- PLUG INS ---"
 "light line configs
