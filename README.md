@@ -1,6 +1,11 @@
 To set up this repo, the following steps must be taken: 
 
  - clone repo into hidden ~/.dev_env/ directory
+ ```
+ cd ~
+ git clone ...
+ mv vim_config .dev_env
+ ```
 
  - run these commands to get pathogen, a vim plugin manager: 
 ```
@@ -14,6 +19,10 @@ To set up this repo, the following steps must be taken:
  ```
 
  - init git submodules for pathogen vim plugins
+ ```
+ git submodule init
+ git submodule update
+ ```
  
  - create symlink for vimrc 
  ```
@@ -25,12 +34,12 @@ To set up this repo, the following steps must be taken:
     ln -s ~/.dev_env/tmuxconf ~/.tmux.conf
  ```
 
- - create symlink for shell profile for bash
+ - create symlink for shell profile for bash or for zsh
  ```
     ln -s ~/.dev_env/shell/bashprofile ~/.bash_profile
- ```
- - OR for zsh
- ```
+
+    OR
+
     ln -s ~/.dev_env/shell/zshrc ~/.zshrc
  ```
 
@@ -49,4 +58,10 @@ To set up this repo, the following steps must be taken:
     brew install clang-format
     brew install macvim
     brew link macvim
+ ```
+
+ - Unrelated, but you'll want to setup python and virtualenvs:
+ ```
+    brew install python
+    pip3 install virtualenvwrapper
  ```
