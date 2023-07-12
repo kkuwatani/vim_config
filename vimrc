@@ -2,9 +2,9 @@
 execute pathogen#infect()
 
 " syntax and style configs
+syntax on
 filetype plugin indent on
 filetype on
-syntax on
 let python_highlight_all=1
 colorscheme molokai
 hi Visual term=reverse cterm=reverse guibg=Grey
@@ -81,8 +81,12 @@ endfunc
 nnoremap <leader>nt :call NumberToggle()<cr>
 " paste without overwrite
 xnoremap P pgvy
+
+"--- FORMATTERS ---"
 " run clang format
 noremap <leader>k :py3f ~/.vim/bundle/clang-format.py<cr>
+" run rust formatter (requires https://github.com/rust-lang/rustfmt)
+noremap <leader>j :RustFmt<cr>
 
 "--- PLUG INS ---"
 "light line configs
@@ -94,6 +98,7 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
+nnoremap <C-q> :NERDTreeToggle<CR>
 
 "nerd tree configs
 autocmd StdinReadPre * let s:std_in=1
@@ -116,7 +121,5 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-" ctags configs
-
-"VimGo configuration
-let g:go_metalinter_autosave = 1
+" tagbar
+nnoremap <C-[> :TagbarToggle<CR>
