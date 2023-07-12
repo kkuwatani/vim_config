@@ -49,3 +49,18 @@ prompt='%n %F{002}%K{234}%~ %F{003}%K{234}$(git_branch_name) %F{015}%K{234}$ '
 # fixed a tmux zsh issue that causes zsh shortcuts to break
 bindkey -e
 #####################
+
+# Zipline
+# rust environment
+source $HOME/.cargo/env
+
+# Build system setup
+# util-linux for the build system
+export PATH="$(brew --prefix)/opt/util-linux/bin:${PATH}"
+export PATH="$(brew --prefix)/opt/util-linux/sbin:${PATH}"
+#docker shell script
+source /Users/kyle.kuwatani/github/FlightSystems/docker_fun.sh
+# aws credential renewal
+awsup='aws_sso && source ~/.aws/aws.sh'
+
+alias sshkk='ssh kyle.kuwatani@10.40.4.249'
