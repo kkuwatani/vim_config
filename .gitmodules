@@ -22,3 +22,9 @@
 [submodule "bash/git"]
 	path = shell/git
 	url = https://github.com/git/git.git
+[submodule "bundle/rust.vim"]
+	path = bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule "bundle/tagbar"]
+	path = bundle/tagbar
+	url = https://github.com/preservim/tagbar.git
