@@ -4,7 +4,6 @@ execute pathogen#infect()
 " syntax and style configs
 syntax on
 filetype plugin indent on
-filetype on
 let python_highlight_all=1
 colorscheme molokai
 hi Visual term=reverse cterm=reverse guibg=Grey
@@ -21,16 +20,15 @@ set hidden
 set history=100
 
 "formatting
-filetype indent on
 set nowrap
 set tabstop=4
 set autoindent
-set expandtab "tabs are actually actually spaces 
+set expandtab "tabs are actually actually spaces
 set shiftwidth=4 "specifically tabs = 4 spaces
 set smartindent "intelligent auto tabbing
 
 "copy paste config
-set clipboard=unnamed 
+set clipboard=unnamed
 
 "mouse config (use options + click to use mouse)
 set mouse=a
@@ -57,7 +55,7 @@ nnoremap S i<cr><esc><right>
 " buffer navigation
 nnoremap <C-m> :bn<CR>
 nnoremap <C-n> :bp<CR>
-noremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR> 
+noremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 " need a shortcut for closing buffer
 " buffer splits
 noremap <leader>v :vsplit<cr>
@@ -84,6 +82,7 @@ xnoremap P pgvy
 
 "--- FORMATTERS ---"
 " run clang format
+let g:rustfmt_command = '~/.cargo/bin/rustfmt'
 noremap <leader>k :py3f ~/.vim/bundle/clang-format.py<cr>
 " run rust formatter (requires https://github.com/rust-lang/rustfmt)
 noremap <leader>j :RustFmt<cr>
@@ -121,9 +120,8 @@ nnoremap <C-F>o :CtrlSFOpen<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-" tagbar
-nnoremap <C-[> :TagbarToggle<CR>
-
 " fzf
 nnoremap <C-P> :GFiles<Cr>
 
+"tagbar
+nnoremap <C-_> :TagbarToggle<CR>
