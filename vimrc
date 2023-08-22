@@ -7,7 +7,6 @@ filetype plugin indent on
 let python_highlight_all=1
 colorscheme molokai
 hi Visual term=reverse cterm=reverse guibg=Grey
-set omnifunc=syntaxcomplete#Complete
 
 "functional aesthetic configs
 set number
@@ -88,6 +87,13 @@ noremap <leader>k :py3f ~/.vim/bundle/clang-format.py<cr>
 noremap <leader>j :RustFmt<cr>
 
 "--- PLUG INS ---"
+" fzf
+nnoremap <C-P> :GFiles<Cr>
+nnoremap <C-F> :Ag<Cr>
+
+"tagbar
+nnoremap <C-_> :TagbarToggle<CR>
+
 "light line configs
 set laststatus=2
 set ttimeout ttimeoutlen=30
@@ -109,19 +115,13 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 let g:ctrlp_max_files=0
 
 "ctrsf configs
-"default to compact mode (M to switch to normal mode)
+" default to compact mode (M to switch to normal mode)
 let g:ctrlsf_default_view_mode = 'compact'
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-
-" fzf
-nnoremap <C-P> :GFiles<Cr>
-
-"tagbar
-nnoremap <C-_> :TagbarToggle<CR>
+nmap     <leader>ff <Plug>CtrlSFPrompt
+vmap     <leader>ff <Plug>CtrlSFVwordPath
+vmap     <leader>fF <Plug>CtrlSFVwordExec
+nmap     <leader>fn <Plug>CtrlSFCwordPath
+nmap     <leader>fp <Plug>CtrlSFPwordPath
+" nnoremap <leader>fo :CtrlSFOpen<CR>
+" nnoremap <leader>ft :CtrlSFToggle<CR>
+" inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
