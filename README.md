@@ -60,6 +60,11 @@ To set up this repo, the following steps must be taken:
     brew link macvim
  ```
 
+ - Install fzf for fzf vim plugin:
+ ```
+    brew install fzf
+ ```
+
  - Unrelated, but you'll want to setup python and virtualenvs:
  ```
     brew install python

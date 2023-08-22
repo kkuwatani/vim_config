@@ -123,3 +123,7 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
 " tagbar
 nnoremap <C-[> :TagbarToggle<CR>
+
+" fzf
+nnoremap <C-P> :GFiles<Cr>
+
