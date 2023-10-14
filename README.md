@@ -28,6 +28,15 @@ To set up this repo, the following steps must be taken:
  ```
     ln -s ~/.dev_env/vimrc ~/.vimrc
  ```
+
+ - create symlinks for nvim config
+ ```
+    mkdir ~/.config/nvim
+    ln -s ~/dev_env/vimrc ~/.config/nvim/init.vim
+    ln -s ~/dev_env/bundle ~/.config/nvim/bundle
+    ln -s ~/dev_env/colors ~/.config/nvim/colors
+    ln -s ~/dev_env/autoload ~/.config/nvim/autoload
+ ```
  
  - create symlink for tmux conf 
  ```

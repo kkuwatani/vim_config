@@ -31,7 +31,9 @@ set clipboard=unnamed
 
 "mouse config (use options + click to use mouse)
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 "make backspace work in INSERT
 set backspace=2
@@ -90,6 +92,7 @@ noremap <leader>j :RustFmt<cr>
 " fzf
 nnoremap <C-P> :GFiles<Cr>
 nnoremap <C-F> :Ag<Cr>
+nnoremap <leader>p :Files<Cr>
 
 "tagbar
 nnoremap <C-_> :TagbarToggle<CR>
