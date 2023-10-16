@@ -120,11 +120,16 @@ let g:ctrlp_max_files=0
 "ctrsf configs
 " default to compact mode (M to switch to normal mode)
 let g:ctrlsf_default_view_mode = 'compact'
-nmap     <leader>ff <Plug>CtrlSFPrompt
-vmap     <leader>ff <Plug>CtrlSFVwordPath
-vmap     <leader>fF <Plug>CtrlSFVwordExec
-nmap     <leader>fn <Plug>CtrlSFCwordPath
-nmap     <leader>fp <Plug>CtrlSFPwordPath
+nmap <leader>ff <Plug>CtrlSFPrompt
+vmap <leader>ff <Plug>CtrlSFVwordPath
+vmap <leader>fF <Plug>CtrlSFVwordExec
+nmap <leader>fn <Plug>CtrlSFCwordPath
+nmap <leader>fp <Plug>CtrlSFPwordPath
 " nnoremap <leader>fo :CtrlSFOpen<CR>
 " nnoremap <leader>ft :CtrlSFToggle<CR>
 " inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
+
+" github copilot configs
+nmap <leader>gd :Copilot disable<cr>
+nmap <leader>ge :Copilot enable<cr>
+nmap <leader>go :Copilot panel<cr>

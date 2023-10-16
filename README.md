@@ -74,6 +74,11 @@ To set up this repo, the following steps must be taken:
     brew install fzf
  ```
 
+ - Setup Github Copilot vim plugin:
+ ```
+    :Copilot setup
+ ```
+
  - Unrelated, but you'll want to setup python and virtualenvs:
  ```
     brew install python
