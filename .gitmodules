@@ -40,3 +40,6 @@
 [submodule "bundle/copilot.vim"]
 	path = bundle/copilot.vim
 	url = https://github.com/github/copilot.vim.git
+[submodule "bundle/diffview.nvim"]
+	path = bundle/diffview.nvim
+	url = https://github.com/sindrets/diffview.nvim.git
