@@ -5,7 +5,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 let python_highlight_all=1
-colorscheme molokai
+colorscheme vscode
 hi Visual term=reverse cterm=reverse guibg=Grey
 
 "functional aesthetic configs
@@ -54,8 +54,8 @@ noremap <C-l> <C-w>l
 " split line (S is redundant with cc)
 nnoremap S i<cr><esc><right>
 " buffer navigation
-nnoremap <C-m> :bn<CR>
-nnoremap <C-n> :bp<CR>
+nnoremap <C-m> :bn<CR> <C-g>
+nnoremap <C-n> :bp<CR> <C-g>
 noremap <leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 " need a shortcut for closing buffer
 " buffer splits
@@ -111,12 +111,6 @@ nnoremap <C-q> :NERDTreeToggle<CR>
 "nerd tree configs
 autocmd StdinReadPre * let s:std_in=1
 
-"ctrlp configs
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_arg_map = 1
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-let g:ctrlp_max_files=0
-
 "ctrsf configs
 " default to compact mode (M to switch to normal mode)
 let g:ctrlsf_default_view_mode = 'compact'
@@ -133,3 +127,8 @@ nmap <leader>fp <Plug>CtrlSFPwordPath
 nmap <leader>gd :Copilot disable<cr>
 nmap <leader>ge :Copilot enable<cr>
 nmap <leader>go :Copilot panel<cr>
+
+" fugitive configs
+nnoremap <leader>gG :GBrowse<Cr>
+nnoremap <leader>gg :GBrowse!<Cr>
+nnoremap <leader>gb :Git blame<Cr>

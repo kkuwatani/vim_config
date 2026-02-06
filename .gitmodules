@@ -43,3 +43,6 @@
 [submodule "bundle/diffview.nvim"]
 	path = bundle/diffview.nvim
 	url = https://github.com/sindrets/diffview.nvim.git
+[submodule "bundle/vscode.nvim"]
+	path = bundle/vscode.nvim
+	url = https://github.com/Mofiqul/vscode.nvim.git
