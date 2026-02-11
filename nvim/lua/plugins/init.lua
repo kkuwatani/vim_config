@@ -1,4 +1,4 @@
-return {
+local plugins = {
   -- core IDE
   {
     "folke/which-key.nvim",
@@ -7,51 +7,6 @@ return {
         require("which-key").setup({})
     end,
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    lazy = false,
-    config = function()
-      local ts = require("nvim-treesitter")
-
-      ts.setup({
-        install_dir = vim.fn.stdpath("data") .. "/site",
-      })
-
-      local desired = { "rust", "python", "c", "cpp" }
-      local installed = ts.get_installed()
-      local installed_set = {}
-      for _, lang in ipairs(installed) do
-        installed_set[lang] = true
-      end
-
-      local missing = {}
-      for _, lang in ipairs(desired) do
-        if not installed_set[lang] then
-          table.insert(missing, lang)
-        end
-      end
-      if #missing > 0 then
-        ts.install(missing)
-      end
-
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "*",
-        callback = function()
-          pcall(vim.treesitter.start)
-          if vim.treesitter.indentexpr then
-            vim.bo.indentexpr = "v:lua.vim.treesitter.indentexpr()"
-          end
-        end,
-      })
-    end,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = true,
-  },
-
   -- colorscheme
   { "Mofiqul/vscode.nvim",
     lazy = false,
@@ -149,9 +104,9 @@ return {
       })
     end,
   },
-
-  -- languge server protocol
-  { "williamboman/mason.nvim", config = true },
-  { "williamboman/mason-lspconfig.nvim" },
-  { "neovim/nvim-lspconfig" },
 }
+
+vim.list_extend(plugins, require("plugins.treesitter"))
+vim.list_extend(plugins, require("plugins.lsp"))
+
+return plugins

@@ -36,6 +36,10 @@ map("n", "<leader>nt", function()
   vim.opt.relativenumber = not vim.opt.relativenumber:get()
 end, opts)
 
+-- plugin managers
+map("n", "<leader>L", "<cmd>Lazy<CR>", opts)
+map("n", "<leader>M", "<cmd>Mason<CR>", opts)
+
 -- paste without overwriting default register
 map("x", "P", "pgvy", opts)
 
