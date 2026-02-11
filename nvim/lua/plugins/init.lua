@@ -12,11 +12,28 @@ return {
     build = ":TSUpdate",
     lazy = false,
     config = function()
-      require("nvim-treesitter").setup({
+      local ts = require("nvim-treesitter")
+
+      ts.setup({
         install_dir = vim.fn.stdpath("data") .. "/site",
       })
 
-      require("nvim-treesitter").install({ "rust", "python", "c", "cpp" })
+      local desired = { "rust", "python", "c", "cpp" }
+      local installed = ts.get_installed()
+      local installed_set = {}
+      for _, lang in ipairs(installed) do
+        installed_set[lang] = true
+      end
+
+      local missing = {}
+      for _, lang in ipairs(desired) do
+        if not installed_set[lang] then
+          table.insert(missing, lang)
+        end
+      end
+      if #missing > 0 then
+        ts.install(missing)
+      end
 
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "*",
@@ -64,6 +81,7 @@ return {
     },
     config = function()
       require("neo-tree").setup({
+        window = { width = 30 },
         filesystem = { follow_current_file = { enabled = true } },
       })
     end,
@@ -77,6 +95,13 @@ return {
       require("telescope").setup({})
     end,
   },
+  {
+    "stevearc/aerial.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("aerial").setup({})
+    end,
+  },
 
   -- git tools
   {
@@ -85,12 +110,31 @@ return {
       require("gitsigns").setup({})
     end,
   },
+  { "tpope/vim-fugitive" },
+  { "tpope/vim-rhubarb" },
+  {
+    "sindrets/diffview.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("diffview").setup({})
+    end,
+  },
   {
     "zbirenbaum/copilot.lua",
     config = function()
       require("copilot").setup({
-        suggestion = { enabled = true, autotrigger = true, },
-        panel = { enabled = true },
+        suggestion = {
+          enabled = true,
+          auto_trigger = true,
+          debounce = 75,
+          keymap = {
+            accept = "<C-l>",
+            next = "<C-j>",
+            prev = "<C-k>",
+            dismiss = "<C-]>",
+          },
+        },
+        panel = { enabled = true, auto_refresh = true },
       })
     end,
   },

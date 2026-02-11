@@ -22,7 +22,3 @@ vim.opt.mouse = "a"
 
 -- backspace in insert
 vim.opt.backspace = { "indent", "eol", "start" }
-
--- enable truecolor
-vim.opt.termguicolors = true
--- sensible defaults
