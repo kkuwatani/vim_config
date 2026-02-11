@@ -1,17 +1,17 @@
 [submodule "bundle/lightline.vim"]
-	path = bundle/lightline.vim
+	path = og_vim/bundle/lightline.vim
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule "bundle/vim-gitgutter"]
-	path = bundle/vim-gitgutter
+	path = og_vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
 [submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
+	path = og_vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
+	path = og_vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/ctrlsf"]
-	path = bundle/ctrlsf
+	path = og_vim/bundle/ctrlsf
 	url = https://github.com/dyng/ctrlsf.vim
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
@@ -20,29 +20,29 @@
 	path = shell/git
 	url = https://github.com/git/git.git
 [submodule "bundle/tagbar"]
-	path = bundle/tagbar
+	path = og_vim/bundle/tagbar
 	url = https://github.com/preservim/tagbar.git
 [submodule "bundle/fzf"]
-	path = bundle/fzf
+	path = og_vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
 [submodule "bundle/fzf.vim"]
-	path = bundle/fzf.vim
+	path = og_vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
 [submodule "bundle/vim-fugitive"]
-	path = bundle/vim-fugitive
+	path = og_vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/vim-rhubarb"]
-	path = bundle/vim-rhubarb
+	path = og_vim/bundle/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
 [submodule "bundle/copilot.vim"]
-	path = bundle/copilot.vim
+	path = og_vim/bundle/copilot.vim
 	url = https://github.com/github/copilot.vim.git
 [submodule "bundle/diffview.nvim"]
-	path = bundle/diffview.nvim
+	path = og_vim/bundle/diffview.nvim
 	url = https://github.com/sindrets/diffview.nvim.git
 [submodule "bundle/vscode.nvim"]
-	path = bundle/vscode.nvim
+	path = og_vim/bundle/vscode.nvim
 	url = https://github.com/Mofiqul/vscode.nvim.git
 [submodule "bundle/coc.nvim"]
-	path = bundle/coc.nvim
+	path = og_vim/bundle/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
