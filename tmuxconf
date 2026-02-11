@@ -1,5 +1,7 @@
-# for vim colorschemes in tmux
-set -g default-terminal "screen-256color"
+# Prefer tmux terminfo if available (best for truecolor)
+set -g default-terminal "tmux-256color"
+# Truecolor passthrough (works for most terminals)
+set -as terminal-overrides ",*:Tc"
 
 # increase scrollback buffer
 set-option -g history-limit 7500
