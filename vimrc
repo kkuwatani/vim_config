@@ -132,3 +132,7 @@ nmap <leader>go :Copilot panel<cr>
 nnoremap <leader>gG :GBrowse<Cr>
 nnoremap <leader>gg :GBrowse!<Cr>
 nnoremap <leader>gb :Git blame<Cr>
+
+" Coc configs
+nnoremap <silent> <Leader>t :CocCommand document.toggleInlayHint<CR>
+
