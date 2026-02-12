@@ -4,6 +4,9 @@ local opts = { silent = true }
 -- clear search highlight
 map("n", "\\", ":nohlsearch<CR>", opts)
 
+-- jump to end of line
+map({ "n", "v" }, "-", "$", opts)
+
 
 -- split navigation
 map({ "n", "v" }, "<C-h>", "<C-w>h", opts)
@@ -77,6 +80,7 @@ map("n", "<C-_>", function() vim.cmd("AerialToggle") end, opts)
 
 -- Neo-tree (NERDTree replacement)
 map("n", "<C-q>", "<cmd>Neotree toggle<CR>", opts)
+map("n", "<leader>tq", "<cmd>Neotree filesystem reveal<CR>", opts)
 
 -- DiffViewer [leader+g]
 vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>")

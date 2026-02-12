@@ -47,7 +47,57 @@ local plugins = {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require("telescope").setup({})
+      local actions = require("telescope.actions")
+      local action_state = require("telescope.actions.state")
+
+      local function open_multi(prompt_bufnr)
+        local picker = action_state.get_current_picker(prompt_bufnr)
+        local selections = picker:get_multi_selection()
+        if #selections == 0 then
+          actions.select_default(prompt_bufnr)
+          return
+        end
+
+        actions.close(prompt_bufnr)
+        for _, entry in ipairs(selections) do
+          local filename = entry.path or entry.filename or entry[1]
+          if filename then
+            vim.cmd("edit " .. vim.fn.fnameescape(filename))
+          end
+        end
+      end
+
+      local function open_multi_vsplit(prompt_bufnr)
+        local picker = action_state.get_current_picker(prompt_bufnr)
+        local selections = picker:get_multi_selection()
+        if #selections == 0 then
+          actions.select_vertical(prompt_bufnr)
+          return
+        end
+
+        actions.close(prompt_bufnr)
+        for _, entry in ipairs(selections) do
+          local filename = entry.path or entry.filename or entry[1]
+          if filename then
+            vim.cmd("vsplit " .. vim.fn.fnameescape(filename))
+          end
+        end
+      end
+
+      require("telescope").setup({
+        defaults = {
+          mappings = {
+            i = {
+              ["<CR>"] = open_multi,
+              ["<C-v>"] = open_multi_vsplit,
+            },
+            n = {
+              ["<CR>"] = open_multi,
+              ["<C-v>"] = open_multi_vsplit,
+            },
+          },
+        },
+      })
     end,
   },
   {

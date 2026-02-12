@@ -25,6 +25,19 @@ return {
     end,
   },
   {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      local move = require("nvim-treesitter-textobjects.move")
+      vim.keymap.set({ "n", "x", "o" }, "gs", function()
+        move.goto_next_start("@function.outer")
+      end, { silent = true })
+      vim.keymap.set({ "n", "x", "o" }, "gS", function()
+        move.goto_next_end("@function.outer")
+      end, { silent = true })
+    end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = true,
