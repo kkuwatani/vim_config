@@ -26,9 +26,11 @@ return {
     config = function()
       local on_attach = require("config.lsp").on_attach
 
+      vim.lsp.config("rust_analyzer", { on_attach = on_attach })
       vim.lsp.config("pyright", { on_attach = on_attach })
       vim.lsp.config("clangd", { on_attach = on_attach })
 
+      vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("pyright")
       vim.lsp.enable("clangd")
 

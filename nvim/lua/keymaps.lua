@@ -17,7 +17,16 @@ map({ "n", "v" }, "<C-l>", "<C-w>l", opts)
 -- buffer navigation
 map("n", "<C-m>", ":bnext<CR><C-g>", opts)
 map("n", "<C-n>", ":bprevious<CR><C-g>", opts)
-map("n", "<leader>d", ":confirm bdelete<CR>", opts)
+map("n", "<leader>d", function()
+  local current = vim.api.nvim_get_current_buf()
+  local listed = vim.fn.getbufinfo({ buflisted = 1 })
+  if #listed > 1 then
+    vim.cmd("confirm bprevious")
+  else
+    vim.cmd("enew")
+  end
+  vim.cmd("confirm bdelete " .. current)
+end, opts)
 
 -- buffer splits
 map("n", "<leader>v", ":vsplit<CR>", opts)
@@ -83,7 +92,15 @@ map("n", "<C-q>", "<cmd>Neotree toggle<CR>", opts)
 map("n", "<leader>tq", "<cmd>Neotree filesystem reveal<CR>", opts)
 
 -- DiffViewer [leader+g]
-vim.keymap.set("n", "<leader>gd", ":DiffviewOpen<CR>")
+map("n", "<leader>gd", function()
+  local ok, lib = pcall(require, "diffview.lib")
+  if ok and lib.get_current_view() then
+    vim.cmd("DiffviewClose")
+    return
+  end
+
+  vim.cmd("DiffviewOpen")
+end, opts)
 -- Fugitive (from old vimrc) [leader+g]
 map("n", "<leader>gG", ":GBrowse<CR>", opts)
 map("n", "<leader>gg", ":GBrowse!<CR>", opts)
