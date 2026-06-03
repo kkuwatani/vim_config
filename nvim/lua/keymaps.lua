@@ -84,9 +84,6 @@ map("v", "<leader>f", function()
   require("telescope.builtin").grep_string({ search = vim.fn.getreg('"') })
 end, opts)
 
--- Aerial (Tagbar replacement)
-map("n", "<C-_>", function() vim.cmd("AerialToggle") end, opts)
-
 -- Neo-tree (NERDTree replacement)
 map("n", "<C-q>", "<cmd>Neotree toggle<CR>", opts)
 map("n", "<leader>tq", "<cmd>Neotree filesystem reveal<CR>", opts)
@@ -106,6 +103,15 @@ map("n", "<leader>gG", ":GBrowse<CR>", opts)
 map("n", "<leader>gg", ":GBrowse!<CR>", opts)
 map("n", "<leader>gb", ":Git blame<CR>", opts)
 map("n", "<leader>gc", ":Copilot panel<CR>", opts)
+map("n", "<leader>gl", function()
+  local client = require("copilot.client")
+  local command = require("copilot.command")
 
--- LSP
-map("n", "<leader>lc", vim.lsp.buf.rename, opts)
+  if client.is_disabled() then
+    command.enable()
+    vim.notify("Copilot enabled")
+  else
+    command.disable()
+    vim.notify("Copilot disabled")
+  end
+end, opts)

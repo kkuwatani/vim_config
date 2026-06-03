@@ -22,3 +22,6 @@ vim.opt.mouse = "a"
 
 -- backspace in insert
 vim.opt.backspace = { "indent", "eol", "start" }
+
+-- completion
+vim.opt.completeopt = { "menu", "menuone", "noselect", "popup" }

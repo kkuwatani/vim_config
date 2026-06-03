@@ -100,13 +100,6 @@ local plugins = {
       })
     end,
   },
-  {
-    "stevearc/aerial.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("aerial").setup({})
-    end,
-  },
 
   -- git tools
   {
